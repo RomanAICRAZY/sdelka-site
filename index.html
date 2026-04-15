@@ -13,8 +13,7 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            /* Светлый градиентный фон */
-            background: linear-gradient(145deg, #f8faff 0%, #efe8ff 100%);
+            background: linear-gradient(145deg, #f4f2ff 0%, #e9e4ff 100%);
             color: #1A1A1A;
             line-height: 1.5;
             position: relative;
@@ -29,18 +28,16 @@
             width: 100%;
             height: 100%;
             background-image: 
-                /* Тонкая сетка (как в чатах MAX) */
-                linear-gradient(rgba(108, 60, 225, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(108, 60, 225, 0.05) 1px, transparent 1px),
-                /* Звёздочки (космическая пыль) */
+                linear-gradient(rgba(108, 60, 225, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(108, 60, 225, 0.08) 1px, transparent 1px),
                 radial-gradient(2px 2px at 15% 30%, #6C3CE1, rgba(0,0,0,0)),
                 radial-gradient(1px 1px at 70% 85%, #6C3CE1, rgba(0,0,0,0)),
-                radial-gradient(1px 2px at 45% 60%, #6C3CE1, rgba(0,0,0,0)),
-                radial-gradient(2px 1px at 88% 20%, #6C3CE1, rgba(0,0,0,0)),
+                radial-gradient(2px 1px at 45% 60%, #6C3CE1, rgba(0,0,0,0)),
+                radial-gradient(1px 2px at 88% 20%, #6C3CE1, rgba(0,0,0,0)),
                 radial-gradient(1px 1px at 5% 70%, #6C3CE1, rgba(0,0,0,0));
-            background-size: 50px 50px, 50px 50px, 300px 300px, 400px 400px, 350px 350px, 250px 250px, 200px 200px;
+            background-size: 60px 60px, 60px 60px, 300px 300px, 400px 400px, 350px 350px, 250px 250px, 200px 200px;
             background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-            opacity: 0.6;
+            opacity: 0.5;
             pointer-events: none;
             z-index: 0;
         }
@@ -61,15 +58,16 @@
 
         .max-badge {
             display: inline-block;
-            background: rgba(108, 60, 225, 0.1);
+            background: rgba(108, 60, 225, 0.15);
             backdrop-filter: blur(4px);
-            border: 1px solid rgba(108, 60, 225, 0.3);
+            border: 1px solid rgba(108, 60, 225, 0.4);
             border-radius: 50px;
             padding: 6px 16px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             margin-bottom: 20px;
             color: #6C3CE1;
+            box-shadow: 0 0 10px rgba(108, 60, 225, 0.1);
         }
 
         .header h1 {
@@ -90,7 +88,7 @@
 
         .button {
             display: inline-block;
-            background: #6C3CE1;
+            background: linear-gradient(90deg, #6C3CE1, #8a5cf0);
             color: white;
             padding: 14px 32px;
             border-radius: 50px;
@@ -98,13 +96,14 @@
             font-weight: 600;
             font-size: 18px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(108, 60, 225, 0.2);
+            box-shadow: 0 4px 15px rgba(108, 60, 225, 0.3);
+            border: none;
         }
 
         .button:hover {
-            background: #5A2EC0;
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(108, 60, 225, 0.3);
+            box-shadow: 0 8px 25px rgba(108, 60, 225, 0.4);
+            background: linear-gradient(90deg, #8a5cf0, #6C3CE1);
         }
 
         /* Преимущества */
@@ -139,7 +138,7 @@
         .feature-card:hover {
             transform: translateY(-4px);
             border-color: #6C3CE1;
-            box-shadow: 0 12px 28px rgba(108, 60, 225, 0.08);
+            box-shadow: 0 12px 28px rgba(108, 60, 225, 0.1);
             background: white;
         }
 
@@ -156,9 +155,9 @@
         /* Блок про минимизацию работы */
         .minimize {
             padding: 60px 0;
-            background: rgba(108, 60, 225, 0.04);
-            border-top: 1px solid rgba(108, 60, 225, 0.1);
-            border-bottom: 1px solid rgba(108, 60, 225, 0.1);
+            background: rgba(108, 60, 225, 0.05);
+            border-top: 1px solid rgba(108, 60, 225, 0.15);
+            border-bottom: 1px solid rgba(108, 60, 225, 0.15);
             text-align: center;
         }
 
@@ -191,7 +190,7 @@
             border-radius: 24px;
             padding: 40px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(108, 60, 225, 0.15);
+            border: 1px solid rgba(108, 60, 225, 0.2);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
         }
 
@@ -206,7 +205,7 @@
         .seller-card:hover, .buyer-card:hover {
             transform: translateY(-4px);
             border-color: #6C3CE1;
-            box-shadow: 0 16px 32px rgba(108, 60, 225, 0.1);
+            box-shadow: 0 16px 32px rgba(108, 60, 225, 0.12);
         }
 
         .seller-card h2, .buyer-card h2 {
@@ -230,33 +229,35 @@
 
         .seller-card .button-small, .buyer-card .button-small {
             display: inline-block;
-            background: #6C3CE1;
+            background: linear-gradient(90deg, #6C3CE1, #8a5cf0);
             color: white;
             padding: 12px 24px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
+            border: none;
         }
 
         .seller-card .button-small:hover, .buyer-card .button-small:hover {
-            background: #5A2EC0;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 60, 225, 0.3);
+            background: linear-gradient(90deg, #8a5cf0, #6C3CE1);
         }
 
         .buyer-card .button-small {
-            background: #2D2D5A;
+            background: linear-gradient(90deg, #2D2D5A, #4a4a8a);
         }
 
         .buyer-card .button-small:hover {
-            background: #1A1A3A;
+            background: linear-gradient(90deg, #4a4a8a, #2D2D5A);
         }
 
         /* Автоматизированные выплаты */
         .automated {
             padding: 60px 0;
             text-align: center;
-            background: rgba(108, 60, 225, 0.02);
+            background: rgba(108, 60, 225, 0.03);
         }
 
         .automated h2 {
@@ -301,6 +302,7 @@
             background: #6C3CE1;
             color: white;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 60, 225, 0.2);
         }
 
         /* Подвал */
@@ -423,7 +425,6 @@
     </div>
 
     <script>
-        // Ссылки нужно будет заменить на реальные после создания бота
         document.getElementById('botLink').href = '#';
         document.getElementById('sellerLink').href = '#';
         document.getElementById('buyerLink').href = '#';
