@@ -2,8 +2,8 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Александр — рекламный менеджер в MAX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Сделка — безопасные сделки на рынке рекламы MAX</title>
     <style>
         * {
             margin: 0;
@@ -12,423 +12,371 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(145deg, #f4f2ff 0%, #e9e4ff 100%);
-            color: #1A1A1A;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Inter', sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
             line-height: 1.5;
-            position: relative;
-        }
-
-        /* Космический узор (звёздная пыль + сетка) */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(108, 60, 225, 0.08) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(108, 60, 225, 0.08) 1px, transparent 1px),
-                radial-gradient(2px 2px at 15% 30%, #6C3CE1, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 70% 85%, #6C3CE1, rgba(0,0,0,0)),
-                radial-gradient(2px 1px at 45% 60%, #6C3CE1, rgba(0,0,0,0)),
-                radial-gradient(1px 2px at 88% 20%, #6C3CE1, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 5% 70%, #6C3CE1, rgba(0,0,0,0));
-            background-size: 60px 60px, 60px 60px, 300px 300px, 400px 400px, 350px 350px, 250px 250px, 200px 200px;
-            background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-            opacity: 0.5;
-            pointer-events: none;
-            z-index: 0;
+            scroll-behavior: smooth;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 1;
+            padding: 0 24px;
         }
 
-        /* Шапка */
-        .header {
-            padding: 60px 0;
+        /* Шапка с градиентом */
+        .hero {
+            background: linear-gradient(135deg, #c084fc 0%, #a855f7 50%, #3b82f6 100%);
+            color: white;
+            padding: 60px 0 80px;
             text-align: center;
         }
 
-        .max-badge {
-            display: inline-block;
-            background: rgba(108, 60, 225, 0.15);
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(108, 60, 225, 0.4);
-            border-radius: 50px;
-            padding: 6px 16px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #6C3CE1;
-            box-shadow: 0 0 10px rgba(108, 60, 225, 0.1);
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .header h1 {
-            font-size: 52px;
-            margin-bottom: 16px;
+        .logo {
+            font-size: 56px;
             font-weight: 800;
-            background: linear-gradient(135deg, #1A1A3A, #6C3CE1);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
         }
 
-        .header p {
-            font-size: 20px;
-            margin-bottom: 32px;
-            color: #4A4A6A;
+        .tagline {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 24px;
+            opacity: 0.95;
         }
 
-        .button {
+        .unique-feature {
+            font-size: 18px;
+            background: rgba(255,255,255,0.15);
             display: inline-block;
-            background: linear-gradient(90deg, #6C3CE1, #8a5cf0);
-            color: white;
+            padding: 8px 20px;
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+            margin-bottom: 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #3b82f6;
             padding: 14px 32px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 18px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(108, 60, 225, 0.3);
-            border: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        .button:hover {
+        .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(108, 60, 225, 0.4);
-            background: linear-gradient(90deg, #8a5cf0, #6C3CE1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Две колонки */
+        .columns {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .columns-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .col {
+            background: #f8fafc;
+            border-radius: 32px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .col h2 {
+            font-size: 32px;
+            margin-bottom: 24px;
+            color: #0f172a;
+        }
+
+        .col p {
+            margin-bottom: 16px;
+            line-height: 1.5;
+            color: #334155;
+        }
+
+        .col .btn-secondary {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 16px;
+            transition: background 0.2s;
+        }
+
+        .col .btn-secondary:hover {
+            background: #2563eb;
+        }
+
+        /* Как это работает */
+        .how-it-works {
+            padding: 80px 0;
+            background: #f8fafc;
+            text-align: center;
+        }
+
+        .how-it-works h2 {
+            font-size: 36px;
+            margin-bottom: 48px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 32px;
+        }
+
+        .step {
+            background: white;
+            padding: 24px;
+            border-radius: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: #3b82f6;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .step h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
         }
 
         /* Преимущества */
-        .features {
-            padding: 60px 0;
-        }
-
-        .features h2 {
+        .benefits {
+            padding: 80px 0;
+            background: white;
             text-align: center;
-            font-size: 32px;
-            margin-bottom: 48px;
-            color: #1A1A3A;
         }
 
-        .features-grid {
+        .benefits h2 {
+            font-size: 36px;
+            margin-bottom: 48px;
+        }
+
+        .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            gap: 32px;
         }
 
-        .feature-card {
-            text-align: center;
+        .benefit-card {
+            background: #f8fafc;
             padding: 28px;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(4px);
-            border-radius: 20px;
-            border: 1px solid rgba(108, 60, 225, 0.2);
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-4px);
-            border-color: #6C3CE1;
-            box-shadow: 0 12px 28px rgba(108, 60, 225, 0.1);
-            background: white;
-        }
-
-        .feature-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: #1A1A3A;
-        }
-
-        .feature-card p {
-            color: #4A4A6A;
-        }
-
-        /* Блок про минимизацию работы */
-        .minimize {
-            padding: 60px 0;
-            background: rgba(108, 60, 225, 0.05);
-            border-top: 1px solid rgba(108, 60, 225, 0.15);
-            border-bottom: 1px solid rgba(108, 60, 225, 0.15);
-            text-align: center;
-        }
-
-        .minimize h2 {
-            font-size: 32px;
-            margin-bottom: 24px;
-            color: #1A1A3A;
-        }
-
-        .minimize p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto;
-            color: #4A4A6A;
-        }
-
-        /* Разделение на продавцов и покупателей */
-        .split {
-            padding: 60px 0;
-        }
-
-        .split-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .seller-card, .buyer-card {
-            background: white;
             border-radius: 24px;
-            padding: 40px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(108, 60, 225, 0.2);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
         }
 
-        .seller-card {
-            border-top: 4px solid #6C3CE1;
+        /* Статистика */
+        .stats {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e9e4ff 100%);
+            text-align: center;
         }
 
-        .buyer-card {
-            border-top: 4px solid #2D2D5A;
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-top: 32px;
         }
 
-        .seller-card:hover, .buyer-card:hover {
-            transform: translateY(-4px);
-            border-color: #6C3CE1;
-            box-shadow: 0 16px 32px rgba(108, 60, 225, 0.12);
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: #3b82f6;
         }
 
-        .seller-card h2, .buyer-card h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        .seller-card h2 {
-            color: #6C3CE1;
-        }
-
-        .buyer-card h2 {
-            color: #2D2D5A;
-        }
-
-        .seller-card p, .buyer-card p {
-            color: #4A4A6A;
-            margin-bottom: 24px;
-            line-height: 1.6;
-        }
-
-        .seller-card .button-small, .buyer-card .button-small {
-            display: inline-block;
-            background: linear-gradient(90deg, #6C3CE1, #8a5cf0);
+        /* CTA */
+        .cta {
+            padding: 80px 0;
+            background: #0f172a;
             color: white;
-            padding: 12px 24px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-        }
-
-        .seller-card .button-small:hover, .buyer-card .button-small:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 60, 225, 0.3);
-            background: linear-gradient(90deg, #8a5cf0, #6C3CE1);
-        }
-
-        .buyer-card .button-small {
-            background: linear-gradient(90deg, #2D2D5A, #4a4a8a);
-        }
-
-        .buyer-card .button-small:hover {
-            background: linear-gradient(90deg, #4a4a8a, #2D2D5A);
-        }
-
-        /* Автоматизированные выплаты */
-        .automated {
-            padding: 60px 0;
-            text-align: center;
-            background: rgba(108, 60, 225, 0.03);
-        }
-
-        .automated h2 {
-            font-size: 32px;
-            margin-bottom: 24px;
-            color: #1A1A3A;
-        }
-
-        .automated p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto;
-            color: #4A4A6A;
-        }
-
-        /* Контакты */
-        .contacts {
-            padding: 60px 0;
             text-align: center;
         }
 
-        .contacts h2 {
-            font-size: 32px;
-            margin-bottom: 24px;
-            color: #1A1A3A;
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 32px;
         }
 
-        .contact-link {
-            display: inline-block;
+        .cta .btn-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta .btn-light {
             background: white;
-            border: 1px solid #6C3CE1;
-            color: #6C3CE1;
-            padding: 12px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            color: #0f172a;
         }
 
-        .contact-link:hover {
-            background: #6C3CE1;
+        .cta .btn-outline-light {
+            background: transparent;
+            border: 1px solid white;
             color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 60, 225, 0.2);
         }
 
         /* Подвал */
         .footer {
-            background: #1A1A3A;
-            color: #A0A0C0;
+            background: #0f172a;
+            color: #94a3b8;
             text-align: center;
-            padding: 24px 0;
+            padding: 32px 0;
+            border-top: 1px solid #1e293b;
             font-size: 14px;
         }
 
+        .footer a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 36px;
+            .logo {
+                font-size: 40px;
             }
-            .header p {
-                font-size: 16px;
+            .tagline {
+                font-size: 18px;
             }
-            .features h2, .minimize h2, .automated h2, .contacts h2 {
-                font-size: 28px;
-            }
-            .split-grid {
+            .columns-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 32px;
             }
-            .seller-card, .buyer-card {
-                padding: 30px;
+            .col {
+                padding: 28px;
+            }
+            .hero {
+                padding: 40px 0 60px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Шапка -->
-    <div class="header">
-        <div class="container">
-            <div class="max-badge">⚡ Работает в MAX</div>
-            <h1>Александр</h1>
-            <p>Личный бесплатный рекламный менеджер в MAX</p>
-            <a href="#" class="button" id="botLink">Перейти в бота →</a>
+    <!-- Шапка (Hero) -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="logo">СДЕЛКА</div>
+            <div class="tagline">Продавай и покупай рекламу без посредников. В один клик.</div>
+            <div class="unique-feature">✨ Первые в MAX — ваш личный кабинет для управления продажами и покупками</div>
+            <a href="#" class="btn">Начать</a>
         </div>
-    </div>
+    </section>
+
+    <!-- Две колонки (Продавец / Покупатель) -->
+    <section class="columns">
+        <div class="container columns-grid">
+            <div class="col">
+                <h2>📢 Продавайте рекламу</h2>
+                <p>Регистрируйте каналы, указывайте цены. Покупатели сами вас найдут. Вы получаете уведомления и деньги.</p>
+                <p>📦 Все ваши каналы в одной карточке продавца. Покупатели видят всё сразу и могут выбрать несколько для скидки.</p>
+                <p>📅 Продавец получает только дату публикации и деньги за рекламу. Никакого лишнего общения.</p>
+                <p>🤖 Все сделки в удобном боте, не выходя из приложения.</p>
+                <a href="#" class="btn-secondary">Стать продавцом →</a>
+            </div>
+            <div class="col">
+                <h2>🎯 Покупайте рекламу</h2>
+                <p>Ищите каналы по фильтрам. Добавляйте в корзину. Оплачивайте одной суммой.</p>
+                <p>⭐ Добавляйте продавцов в избранное — быстрые повторные заказы без поиска.</p>
+                <p>🤝 Никакого общения с продавцом. Выбрали подходящие варианты и купили.</p>
+                <p>🤖 Все сделки в удобном боте, не выходя из приложения.</p>
+                <a href="#" class="btn-secondary">Найти рекламу →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Как это работает -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>Как это работает</h2>
+            <div class="steps-grid">
+                <div class="step"><div class="step-number">1</div><h3>Регистрация</h3><p>Продавец добавляет каналы, покупатель входит в бота.</p></div>
+                <div class="step"><div class="step-number">2</div><h3>Выбор</h3><p>Фильтры, корзина, скидки — всё автоматически.</p></div>
+                <div class="step"><div class="step-number">3</div><h3>Оплата</h3><p>Деньги замораживаются на счёте платформы до выполнения заказа.</p></div>
+                <div class="step"><div class="step-number">4</div><h3>Выплата</h3><p>Продавец получает деньги после публикации рекламы.</p></div>
+            </div>
+        </div>
+    </section>
 
     <!-- Преимущества -->
-    <div class="features">
+    <section class="benefits">
         <div class="container">
-            <h2>Почему Александр?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>📢 Бесплатно</h3>
-                    <p>Для покупателей и продавцов — без скрытых платежей</p>
-                </div>
-                <div class="feature-card">
-                    <h3>⚡ Быстро</h3>
-                    <p>Выбор каналов и покупка рекламы за 10 секунд</p>
-                </div>
-                <div class="feature-card">
-                    <h3>🎯 Удобно</h3>
-                    <p>Фильтры по темам, цене и подписчикам</p>
-                </div>
-                <div class="feature-card">
-                    <h3>🛒 Корзина</h3>
-                    <p>Покупайте рекламу в нескольких каналах сразу</p>
-                </div>
+            <h2>Почему выбирают «Сделку»?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">🔒 <strong>Безопасно</strong><br>Деньги заморожены до выполнения заказа. Гарант сделки — платформа.</div>
+                <div class="benefit-card">⚡ <strong>Быстро</strong><br>Выбор и оплата рекламы — в один клик. Без посредников и переговоров.</div>
+                <div class="benefit-card">🎯 <strong>Удобно</strong><br>Фильтры, корзина, скидки, история заказов — всё в одном месте.</div>
+                <div class="benefit-card">📊 <strong>Прозрачно</strong><br>Реальная статистика каналов: охваты, ER, ERR.</div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Минимизируйте работу. Увеличьте доход. -->
-    <div class="minimize">
+    <!-- Статистика -->
+    <section class="stats">
         <div class="container">
-            <h2>📈 Минимизируйте работу. Увеличьте доход.</h2>
-            <p>С Александром вам не нужно искать клиентов, договариваться о ценах или обрабатывать заявки вручную.<br>
-            Всё автоматически: регистрация → публикация → продажа → выплата.<br>
-            <strong>Вы просто получаете уведомления и деньги.</strong></p>
-        </div>
-    </div>
-
-    <!-- Разделение: продавцы / покупатели -->
-    <div class="split">
-        <div class="container">
-            <div class="split-grid">
-                <!-- Для продавцов -->
-                <div class="seller-card">
-                    <h2>📢 Продавайте рекламу</h2>
-                    <p>Регистрируйте канал, указывайте цену. Покупатели сами вас найдут. Никаких менеджеров, никаких ручных поисков. Вы просто получаете уведомления и деньги.</p>
-                    <a href="#" class="button-small" id="sellerLink">Зарегистрировать канал →</a>
-                </div>
-                <!-- Для покупателей -->
-                <div class="buyer-card">
-                    <h2>🎯 Покупайте рекламу</h2>
-                    <p>Выбирайте тему, фильтруйте по цене и подписчикам, добавляйте несколько каналов в корзину. Оплачивайте одной суммой. Всё автоматически.</p>
-                    <a href="#" class="button-small" id="buyerLink">Найти рекламу →</a>
-                </div>
+            <h2>Цифры, которые говорят за себя</h2>
+            <div class="stats-grid">
+                <div><div class="stat-number">0 ₽</div><div>стоимость регистрации для продавцов</div></div>
+                <div><div class="stat-number">0%</div><div>комиссия для продавцов (всё уже включено)</div></div>
+                <div><div class="stat-number">100+</div><div>каналов уже в базе</div></div>
+                <div><div class="stat-number">50+</div><div>успешных сделок</div></div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Автоматизированные выплаты -->
-    <div class="automated">
+    <!-- Призыв к действию (CTA) -->
+    <section class="cta">
         <div class="container">
-            <h2>💰 Автоматизированные выплаты</h2>
-            <p>Всё прозрачно. Вы получаете свои деньги вовремя.<br>Никаких скрытых платежей, никаких абонементов.</p>
+            <h2>Готовы начать?</h2>
+            <div class="btn-group">
+                <a href="#" class="btn btn-light">Продать рекламу</a>
+                <a href="#" class="btn btn-outline-light">Купить рекламу</a>
+            </div>
         </div>
-    </div>
-
-    <!-- Контакты -->
-    <div class="contacts">
-        <div class="container">
-            <h2>Остались вопросы?</h2>
-            <a href="#" class="contact-link" id="adminLink">Связаться с администратором</a>
-        </div>
-    </div>
+    </section>
 
     <!-- Подвал -->
-    <div class="footer">
+    <footer class="footer">
         <div class="container">
-            <p>© 2025 Александр. Рекламный менеджер в MAX.</p>
+            <p>© 2025 «Сделка». Платформа безопасных сделок.</p>
+            <p style="margin-top: 8px;">
+                <a href="#">FAQ</a> | <a href="#">Правила</a> | <a href="#">Политика конфиденциальности</a>
+            </p>
         </div>
-    </div>
-
-    <script>
-        document.getElementById('botLink').href = '#';
-        document.getElementById('sellerLink').href = '#';
-        document.getElementById('buyerLink').href = '#';
-        document.getElementById('adminLink').href = '#';
-    </script>
+    </footer>
 </body>
 </html>
